@@ -1,0 +1,18 @@
+#!/usr/bin/env php
+<?
+require getenv('YAWF_ROOT') . '/yawf/lib/App_command.php';
+
+class MyApp_command extends App_command
+{
+    protected function daemons()
+    {
+        // TODO: Return a list of your app daemons
+
+        return array();
+    }
+}
+
+$command = new MyApp_command();
+$command->run();
+
+// End of the MyApp command

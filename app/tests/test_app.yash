@@ -1,0 +1,2 @@
+puts 'Application tests go here in the "app/tests" directory'
+should 'be testing the app', $app->is_testing(), $app
