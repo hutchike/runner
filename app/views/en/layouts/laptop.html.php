@@ -1,2 +1,2 @@
-<h1>Change this file in views/en/layouts/laptop.html.php</h1>
+<h1>Marathon Runner Info</h1>
 <?= $content ?>
