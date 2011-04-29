@@ -93,6 +93,10 @@ var runner = {
   },
   set: function(field, value) {
     this[field] = parseFloat(value);
+    while (field == 'mins' && value >= 60) {
+      this.up('hours');
+      value = this.change('mins', -60);
+    }
     this.calculate();
   },
   up: function(field) {
@@ -108,6 +112,7 @@ var runner = {
     if (field == 'mi') this.convert('mi', 'km');
     else if (field == 'km') this.convert('km', 'mi');
     else this.set(field, value); // set hours or mins
+    return value;
   },
   start: function() {
     this.form = document.forms.converter;
