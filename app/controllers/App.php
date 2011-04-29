@@ -16,6 +16,7 @@ class App_controller extends Controller
         if ($this->session->layout) return $this->session->layout;
 
         $layout = 'laptop';
+/* TODO
         $agent = $_SERVER['HTTP_USER_AGENT'];
         if (strpos($agent, 'Android') > 0)
             $layout = 'Android';
@@ -25,6 +26,7 @@ class App_controller extends Controller
             $layout = 'iPad';
         elseif (strpos($agent, 'Symbian') > 0)
             $layout = 'Symbian';
+*/
 
         return ($this->session->layout = $layout);
     }
