@@ -1,6 +1,7 @@
 <style type="text/css">
 body {
   font-family: arial, helvetica, sans-serif;
+  margin: 0;
 }
 
 #footer {
