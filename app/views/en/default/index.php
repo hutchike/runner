@@ -1,4 +1,8 @@
 <style type="text/css">
+body {
+  font-family: arial, helvetica, sans-serif;
+}
+
 h1 {
   font-style: italic;
   font-size: 28px;
