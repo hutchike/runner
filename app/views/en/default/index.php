@@ -21,6 +21,7 @@ h1 {
 
 .label {
   text-align: right;
+  text-shadow: 0px 1px 1px #fff;
 }
 
 .button {
