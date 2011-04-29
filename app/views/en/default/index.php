@@ -29,15 +29,16 @@ h1 {
 }
 
 .duration {
-  width: 50px;
+  width: 40px;
 }
 
 .distance {
-  width: 50px;
+  width: 40px;
 }
 
 .result {
   width: 70px;
+  font-weight: bold;
 }
 </style>
 
