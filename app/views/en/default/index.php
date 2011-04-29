@@ -24,20 +24,20 @@ h1 {
 <form name="converter" method="get" action="return false">
 <table>
   <tr>
-    <td class="label"><label for="mi">Hours</label></td>
-    <td><input class="duration" type="text" name="hours" value="0" onchange="runner.set('hours', this.value)" /></td>
+    <td class="label"><label for="hours">Hours</label></td>
+    <td><input class="duration" type="text" name="hours" value="0" onchange="runner.set('hours', this.value)" /> <input type="button" name="hours_up" onclick="runner.up('hours')" value="&uarr;" />  <input type="button" name="hours_down" onclick="runner.down('hours')" value="&darr;" /></td>
   </tr>
   <tr>
-    <td class="label"><label for="mi">Minutes</label></td>
-    <td><input class="duration" type="text" name="mins" value="0" onchange="runner.set('mins', this.value)" /></td>
+    <td class="label"><label for="mins">Minutes</label></td>
+    <td><input class="duration" type="text" name="mins" value="0" onchange="runner.set('mins', this.value)" /> <input type="button" name="mins_up" onclick="runner.up('mins')" value="&uarr;" />  <input type="button" name="mins_down" onclick="runner.down('mins')" value="&darr;" /></td>
   </tr>
   <tr>
     <td class="label"><label for="mi">Miles</label></td>
-    <td><input class="distance" type="text" name="mi" value="0" onchange="runner.convert('mi', 'km')" /></td>
+    <td><input class="distance" type="text" name="mi" value="0" onchange="runner.convert('mi', 'km')" /> <input type="button" name="mi_up" onclick="runner.up('mi')" value="&uarr;" />  <input type="button" name="mi_down" onclick="runner.down('mi')" value="&darr;" /></td>
   </tr>
   <tr>
     <td class="label"><label for="km">Kilometers</label></td>
-    <td><input class="distance" type="text" name="km" value="0" onchange="runner.convert('km', 'mi')" /></td>
+    <td><input class="distance" type="text" name="km" value="0" onchange="runner.convert('km', 'mi')" /> <input type="button" name="km_up" onclick="runner.up('km')" value="&uarr;" />  <input type="button" name="km_down" onclick="runner.down('km')" value="&darr;" /></td>
   </tr>
   <tr>
     <td></td>
@@ -76,14 +76,30 @@ var runner = {
     if (mi <= 0 || km < 0) return;
     this.form.time_per_mi.value = this.format_time(mins / mi);
     this.form.time_per_km.value = this.format_time(mins / km);
-    this.form.speed_mph.value = (parseInt(mi / (mins / 600)) / 10) + ' mph';
-    this.form.speed_kph.value = (parseInt(km / (mins / 600)) / 10) + ' kph';
+    if (mins > 0) {
+        this.form.speed_mph.value = (parseInt(mi / (mins / 600)) / 10) + ' mph';
+        this.form.speed_kph.value = (parseInt(km / (mins / 600)) / 10) + ' kph';
+    }
     this.form.finish_half.value = this.format_time(mins / km * this.km_per_race / 2.0);
     this.form.finish_full.value = this.format_time(mins / km * this.km_per_race);
   },
   set: function(field, value) {
     this[field] = parseFloat(value);
     this.calculate();
+  },
+  up: function(field) {
+    this.change(field, 1);
+  },
+  down: function(field) {
+    this.change(field, -1);
+  },
+  change: function(field, amount) {
+    var value = parseInt(this.form[field].value) + amount;
+    if (value < 0) value = 0;
+    this.form[field].value = value;
+    if (field == 'mi') this.convert('mi', 'km');
+    else if (field == 'km') this.convert('km', 'mi');
+    else this.set(field, value); // set hours or mins
   },
   start: function() {
     this.form = document.forms.converter;
