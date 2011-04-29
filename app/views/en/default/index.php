@@ -1,7 +1,7 @@
 <style type="text/css">
 h1 {
   font-style: italic;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 .label {
