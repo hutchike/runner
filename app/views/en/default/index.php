@@ -2,6 +2,7 @@
 body {
   font-family: arial, helvetica, sans-serif;
   margin: 0;
+  background: url(/images/stripes.png);
 }
 
 #footer {
