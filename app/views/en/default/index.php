@@ -12,6 +12,10 @@ h1 {
   text-align: right;
 }
 
+.button {
+  color: red;
+}
+
 .duration {
   width: 50px;
 }
@@ -29,23 +33,23 @@ h1 {
 <table>
   <tr>
     <td class="label"><label for="hours">Hours</label></td>
-    <td><input class="duration" type="text" name="hours" value="0" onchange="runner.set('hours', this.value)" /> <input type="button" name="hours_up" onclick="runner.up('hours')" value="&uarr;" />  <input type="button" name="hours_down" onclick="runner.down('hours')" value="&darr;" /></td>
+    <td><input class="duration" tabindex="1" type="text" name="hours" value="0" onchange="runner.set('hours', this.value)" /> <input type="button" name="hours_up" onclick="runner.up('hours')" value="&uarr;" />  <input type="button" name="hours_down" onclick="runner.down('hours')" value="&darr;" /></td>
   </tr>
   <tr>
     <td class="label"><label for="mins">Minutes</label></td>
-    <td><input class="duration" type="text" name="mins" value="0" onchange="runner.set('mins', this.value)" /> <input type="button" name="mins_up" onclick="runner.up('mins')" value="&uarr;" />  <input type="button" name="mins_down" onclick="runner.down('mins')" value="&darr;" /></td>
+    <td><input class="duration" tabindex="2" type="text" name="mins" value="0" onchange="runner.set('mins', this.value)" /> <input type="button" name="mins_up" onclick="runner.up('mins')" value="&uarr;" />  <input type="button" name="mins_down" onclick="runner.down('mins')" value="&darr;" /></td>
   </tr>
   <tr>
     <td class="label"><label for="mi">Miles</label></td>
-    <td><input class="distance" type="text" name="mi" value="0" onchange="runner.convert('mi', 'km')" /> <input type="button" name="mi_up" onclick="runner.up('mi')" value="&uarr;" />  <input type="button" name="mi_down" onclick="runner.down('mi')" value="&darr;" /></td>
+    <td><input class="distance" tabindex="3" type="text" name="mi" value="0" onchange="runner.convert('mi', 'km')" /> <input type="button" name="mi_up" onclick="runner.up('mi')" value="&uarr;" />  <input type="button" name="mi_down" onclick="runner.down('mi')" value="&darr;" /></td>
   </tr>
   <tr>
     <td class="label"><label for="km">Kilometers</label></td>
-    <td><input class="distance" type="text" name="km" value="0" onchange="runner.convert('km', 'mi')" /> <input type="button" name="km_up" onclick="runner.up('km')" value="&uarr;" />  <input type="button" name="km_down" onclick="runner.down('km')" value="&darr;" /></td>
+    <td><input class="distance" tabindex="4" type="text" name="km" value="0" onchange="runner.convert('km', 'mi')" /> <input type="button" name="km_up" onclick="runner.up('km')" value="&uarr;" />  <input type="button" name="km_down" onclick="runner.down('km')" value="&darr;" /></td>
   </tr>
   <tr>
     <td></td>
-    <td><input type="button" value="Calculate" onclick="runner.calculate()" /></td>
+    <td><input class="button" tabindex="5" type="button" value="Calculate" onclick="runner.calculate()" /></td>
   </tr>
   <tr>
     <td class="label"><label for="time_per_mi">Time per mile</label></td>
