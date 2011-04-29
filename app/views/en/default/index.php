@@ -3,9 +3,18 @@ body {
   font-family: arial, helvetica, sans-serif;
 }
 
+#footer {
+  font-size: 10px;
+  color: #999;
+  text-align: center;
+}
+
 h1 {
   font-style: italic;
   font-size: 28px;
+  color: white;
+  background-color: red;
+  text-align: center;
 }
 
 .label {
@@ -30,7 +39,7 @@ h1 {
 </style>
 
 <form name="converter" method="get" action="return false">
-<table>
+<table align="center">
   <tr>
     <td class="label"><label for="hours">Hours</label></td>
     <td><input class="duration" tabindex="1" type="text" name="hours" value="0" onchange="runner.set('hours', this.value)" /> <input type="button" name="hours_up" onclick="runner.up('hours')" value="&uarr;" />  <input type="button" name="hours_down" onclick="runner.down('hours')" value="&darr;" /></td>

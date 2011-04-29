@@ -6,7 +6,7 @@ class App_controller extends Controller
         $this->render->session_user_id = $this->session->user_id;
         $this->render->session_user_email = $this->session->user_email;
         $this->render->user_email = $this->cookie->user_email;
-        $this->render->title = 'Marathon Runner Info';
+        $this->render->title = 'Marathon-Runner.Info';
         $this->render->onload = '';
         $this->render->layout = $this->layout();
     }

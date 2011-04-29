@@ -1,2 +1,2 @@
-<h1>Marathon Runner Info</h1>
+<h1><?= $title ?></h1>
 <?= $content ?>
