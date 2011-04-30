@@ -129,6 +129,8 @@ var runner = {
   },
   start: function() {
     this.form = document.forms.converter;
+
+    // Parse query string args
     var query = window.location.search.substring(1);
     var vars = query.split("&");
     var args = {};
@@ -136,6 +138,9 @@ var runner = {
       var pair = vars[i].split("=");
       args[pair[0]] = parseFloat(pair[1]);
     }
+
+    // Apply query string args
+    if (args.minutes) args.mins = args.minutes;
     if (args.miles) args.mi = args.miles;
     if (args.kilometers) args.km = args.kilometers;
     if (args.hours) this.change('hours', args.hours);
