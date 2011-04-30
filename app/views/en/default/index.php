@@ -129,6 +129,17 @@ var runner = {
   },
   start: function() {
     this.form = document.forms.converter;
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    var args = {};
+    for (var i = 0; i < vars.length; i++) {
+      var pair = vars[i].split("=");
+      args[pair[0]] = parseFloat(pair[1]);
+    }
+    if (args.hours) this.change('hours', args.hours);
+    if (args.mins) this.change('mins', args.mins);
+    if (args.mi) this.change('mi', args.mi);
+    if (args.km) this.change('km', args.km);
   },
   convert: function(from, to) {
     var dist = this.form[from].value;
