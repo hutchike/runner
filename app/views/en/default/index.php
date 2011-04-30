@@ -136,6 +136,8 @@ var runner = {
       var pair = vars[i].split("=");
       args[pair[0]] = parseFloat(pair[1]);
     }
+    if (args.miles) args.mi = args.miles;
+    if (args.kilometers) args.km = args.kilometers;
     if (args.hours) this.change('hours', args.hours);
     if (args.mins) this.change('mins', args.mins);
     if (args.mi) this.change('mi', args.mi);
