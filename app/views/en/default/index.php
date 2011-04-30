@@ -29,11 +29,11 @@ h1 {
 }
 
 .duration {
-  width: 40px;
+  width: 50px;
 }
 
 .distance {
-  width: 40px;
+  width: 50px;
 }
 
 .result {
